@@ -1,9 +1,21 @@
+[Host]
+# 域名指定本地值：
+# example.com=1.2.3.4
+# 域名指定DNS服务器：
+# example.com=server:1.2.3.4
+# wifi名称指定DNS服务器，如需指定多个DNS，可用逗号分隔：
+# ssid:wifi名称=server:1.2.3.4
+localhost = 127.0.0.1
 
 [URL Rewrite]
-^https?://(www.)?(g|google)\.cn https://www.google.com 302
+# Google搜索引擎防跳转的重写。
+^https?://(www.)?g.cn https://www.google.com 302
+^https?://(www.)?google.cn https://www.google.com 302
 
+[Script]
+# BoxJs安装脚本。
+Rewrite: BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
 [MITM]
-hostname = *.google.cn,*.googlevideo.com
-
-# Made with Love from https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever
+# Shadowrocket仅会解密hostname指定的域名的请求，可以使用通配符。也可以使用前缀 - 排除特定主机名，如 -*.example.com。iOS系统和某些应用有严格的安全策略，仅信任某些特定的证书，对这些域名启动解密可能导致问题，如 *.apple.com，*.icloud.com。
+hostname = www.google.cn
