@@ -155,9 +155,9 @@ INTP | Jack of all trades | I use Arch BTW
 - 直连：正常的网站
 - 包含广告过滤
 
-规则地址：<https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/sr_top500_banlist_ad.conf>
+规则地址：<https://tumblemelon.github.io/Shadowrocket-ADBlock-Rules-Forever/sr_top500_banlist_ad.conf>
 
-![二维码](https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/figure/sr_top500_banlist_ad.png)
+![二维码](https://tumblemelon.github.io/Shadowrocket-ADBlock-Rules-Forever/figure/sr_top500_banlist_ad.png)
 
 ## 白名单过滤 + 广告
 
