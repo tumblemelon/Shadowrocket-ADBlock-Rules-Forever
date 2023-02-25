@@ -85,3 +85,4 @@ Amazon = select,DIRECT,PROXY,香港节点,台湾节点,日本节点,新加坡节
 俄罗斯节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=20,timeout=5,select=0,policy-regex-filter=RU|RUS|Rus|俄罗斯|俄国|俄羅斯|莫斯科|圣彼得堡|西伯利亚|京俄|杭俄|广俄|沪俄
 
 [Rule]
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Shadowrocket/PayPal/PayPal.list,PAYPAL
