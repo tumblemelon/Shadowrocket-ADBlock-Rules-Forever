@@ -1,25 +1,3 @@
-自用项目
------------------------------------------------------
-## 最完善的 iOS Shadowrocket规则
-
-### 试更新公告
-
-由于原作者 [h2y](https://github.com/h2y) 已停止维护 [Shadowrocket-ADBlock-Rules](https://github.com/h2y/Shadowrocket-ADBlock-Rules)，Shadowrocket 再无划分如此细致精美的规则。因此我决定用自己有限的能力和技术对该项目以个人的理解进行更新与维护。**所有规则都会在每天北京时间 8:00 更新发布。**
-
-### 写在前面 —— 请保护好自己
-
-谷歌中英文的搜索体验都优于百度，而刷美剧、ins 追星、去推特看看特朗普也都挺有意思。但是，随着看到的人和事越多，我越发想要在这里说一些话，告诫路过的各位：
-
-**请务必保护好自己** 我们自认为打破了信息的壁垒，其实打破的是保护我们的屏障。因为外网真的存在很多误导性言论，来自各个利益集团对中国网民疯狂洗脑，他们往往还喜欢以平等自由等旗号自称，但仔细想想真的是这样吗？我只知道美国是最善于运用舆论的国家，会结合大数据潜移默化地改变你的观念。如果大家在上网过程中不经意看到了某些观点，务必保留自己独立思考的能力，如果你是一个容易被带偏的人，则建议回到屏障之中。
-
-本规则只提供给大家用于更便捷地学习和工作。如果你是对上述观点持反对意见的极端政治人士，或者已被洗脑，请立即离开，本项目不对你开放。
-
-------------------------------------------------------
-
-这里是一系列好用的Shadowrocket规则，针对 [Shadowrocket](https://liguangming.com/Shadowrocket) 开发，支持广告过滤。规则定义了哪些网站可以直连，哪些必须走代理，规则是一个纯文本文件，无法提供魔法上网功能。使用 Python 按照一定的规则和模板定期自动生成，并且使用开源的力量，集众人之力逐渐完善。
-
-**正在使用手机浏览本页面的用户 [请点击这里](https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever) ，查看完整的说明文档。**
-
 **本规则具有以下特点：**
 
 - 黑名单由最新版 [GFWList](https://github.com/gfwlist/gfwlist) 自动转换；
@@ -71,44 +49,6 @@
 
 如果出现无法正常跳转 Safari 对 google.cn 的请求的情况，请在每次更新后点击规则后方的ℹ️，点击 HTTPS 解密，将 HTTPS 解密关闭，返回，再开启，即可正常跳转。
 
-## 一些推荐的网站
-
-**[IP111](http://ip111.cn/)**
-
-这是一个很棒的 IP 查询网站，支持同时查询你的境内境外 IP，以及谷歌 IP。
-
-**[hzy的博客](https://hzy.pw/)**
-
-我是一名大学生，沉迷技术无法自拔。这是我的个人博客，会分享一些有趣的东西和自己的观点，欢迎来逛逛~
-
-**[DuckSoft的博客](https://www.ducksoft.site/)**
-
-INTP | Jack of all trades | I use Arch BTW
-
-**[Blog](https://diazepam.cc/)**
-
-一个喜欢生命和阳光的孩子。
-
-
-## 常见问题
-
-- **上千行的代理规则，会对上网速度产生影响吗？**
-
-> 不会的。
->
-> 我之前也认为这是一个每次网络数据包经过都会执行一次的规则文件，逐行匹配规则，所以需要尽可能精简。但后来和 SR 作者交流后发现这是一个误区，SR 在每次加载规则时都会生成一棵搜索树，可以理解为对主机名从后往前的有限状态机 DFA，并不是逐行匹配，并且对每次的匹配结果还有个哈希缓存。
->
-> 换句话说，2000 行的规则和 50 行的规则在 SR 中均为同一量级的时间复杂度 O(1)。
-
-
-- **你提供了这么多规则，如何选择适合我的？**
-
-> 最常用的规则是黑名单和白名单。区别在于对待 `未知网站` 的不同处理方式，黑名单默认直连，而白名单则默认使用代理。如果你选择恐惧症爆发，那就两个都下载好了，黑白名单切换使用，天下无忧。
-
-- **你提供了这么多规则，却没有我想要的 o(>.<)o**
-
-> 有任何建议或疑问，[请联系我](#问题反馈)。
-
 - **广告过滤不完全？**
 
 > 该规则并不保证 100% 过滤所有的广告，尤其是视频广告，与网页广告不同的是，优酷等 App 每次升级都有可能更换一次广告策略，因此难以保证其广告屏蔽的实时有效性。而油管广告则不能通过简单的 url 匹配实现完全去广告。
@@ -130,20 +70,6 @@ INTP | Jack of all trades | I use Arch BTW
 **如何贡献代码？**
 
 通常的情况下，对 [factory 目录](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/tree/build/factory) 下的 3 个 `manual_*.txt` 文件做对应修改即可。**Pull requests 请发送至 build 分支。**
-
-**如何拥有自己的定制化规则？**
-
-点击右上角 Fork，取消勾选`Copy the release branch only`，在自己的仓库开启 Actions 功能即可。
-
-
-## 捐助
-
-本项目不接受任何形式的捐助，因为自由地上网本来就是大家的权利，没有必要为此付出更多的代价。
-
-但是，作为一个翻墙规则，不可避免的会对网站有所遗漏，需要大家来共同完善，当发现不好用的地方时，请打开 SR 的日志功能，检查一下是哪一个被墙的域名走了直连，或者是哪一个可以直连的域名走了代理。
-
-将需要修改的信息反馈给我，大家的努力会让这个规则越来越完善！
-
 
 ----------------------------------------
 
@@ -308,24 +234,4 @@ INTP | Jack of all trades | I use Arch BTW
 规则地址：<https://tumblemelon.github.io/Shadowrocket-ADBlock-Rules-Forever/lazy_group.conf>
 
 ![二维码](https://tumblemelon.github.io/Shadowrocket-ADBlock-Rules-Forever/figure/lazy_group.png)
-
-
-## 鸣谢：
-
-感谢 [@h2y](https://github.com/h2y) 及所有给予 [Shadowrocket-ADBlock-Rules](https://github.com/h2y/Shadowrocket-ADBlock-Rules) 无私帮助的社区开发者们；  
-感谢 [@hfdem](https://github.com/hfdem) 给予我的帮助、肯定与支持！  
-感谢 [JetBrains](https://www.jetbrains.com/?from=Shadowrocket-ADBlock-Rules-Forever) 提供的一系列好用的 IDE 和对本项目的支持。  
-![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
-
-### 本项目引用：  
-[gfwlist](https://github.com/gfwlist/gfwlist)  
-[Greatfire Analyzer](https://github.com/Loyalsoldier/cn-blocked-domain)   
-[乘风广告过滤规则](https://github.com/xinggsf/Adblock-Plus-Rule)  
-[EasyList China](https://adblockplus.org/)  
-[Peter Lowe 广告和隐私跟踪域名](https://pgl.yoyo.org/)   
-[blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)  
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/Johnshall/Shadowrocket-ADBlock-Rules-Forever.svg)](https://starchart.cc/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
 
